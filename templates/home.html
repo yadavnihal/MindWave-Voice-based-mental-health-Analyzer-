@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindWave – Understand Your Emotions Through Voice</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/home.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+</head>
+<body class="home-page">
+
+<!-- ── NAVBAR ─────────────────────────────────────────────────────────────── -->
+<nav class="hn-nav">
+  <div class="hn-nav-inner">
+    <div class="hn-logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13" stroke="url(#hg1)" stroke-width="2"/>
+        <path d="M6 15 Q10 7 15 15 Q20 23 24 15" stroke="url(#hg1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#16a34a"/>
+            <stop offset="100%" style="stop-color:#4ade80"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>MindWave</span>
+    </div>
+    <div class="hn-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#dashboard-preview">Live Preview</a>
+      <a href="#how">How It Works</a>
+    </div>
+    <div class="hn-actions">
+      <a href="/login" class="hn-btn-ghost">Login</a>
+      <a href="/signup" class="hn-btn-cta">Get Started</a>
+    </div>
+    <button class="hn-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="hn-mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#dashboard-preview">Live Preview</a>
+    <a href="#how">How It Works</a>
+    <a href="/login">Login</a>
+    <a href="/signup" class="hn-btn-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="hn-hero">
+  <div class="hn-hero-glow hn-glow-1"></div>
+  <div class="hn-hero-glow hn-glow-2"></div>
+  <div class="hn-hero-inner">
+    <div class="hn-hero-badge">
+      <span class="hn-dot-live"></span>
+      AI-Powered Voice Emotion Analysis
+    </div>
+    <h1 class="hn-hero-title">
+      Understand Your<br>
+      <span class="hn-gradient-text">Emotions</span> Through Voice
+    </h1>
+    <p class="hn-hero-sub">
+      Upload your voice and receive real-time mental health insights powered by advanced wav2vec2 deep learning — detecting 7 distinct emotional states with segment-level precision.
+    </p>
+    <div class="hn-hero-btns">
+      <a href="/login" class="hn-btn-cta hn-btn-lg">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 10V3M8 3L5 6M8 3l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 11v1a2 2 0 002 2h8a2 2 0 002-2v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        Analyse Your Voice
+      </a>
+      <a href="#dashboard-preview" class="hn-btn-outline hn-btn-lg">View Demo Dashboard</a>
+    </div>
+    <div class="hn-hero-stats">
+      <div class="hn-stat"><span class="hn-stat-num">7</span><span class="hn-stat-label">Emotion Classes</span></div>
+      <div class="hn-stat-divider"></div>
+      <div class="hn-stat"><span class="hn-stat-num">wav2vec2</span><span class="hn-stat-label">Deep Learning Model</span></div>
+      <div class="hn-stat-divider"></div>
+      <div class="hn-stat"><span class="hn-stat-num">Real-Time</span><span class="hn-stat-label">Segment Analysis</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────────────────── -->
+<section id="about" class="hn-section hn-about">
+  <div class="hn-container">
+    <div class="hn-about-grid">
+      <div class="hn-about-text">
+        <span class="hn-tag">About MindWave</span>
+        <h2>Mental Health Insights from the Way You Speak</h2>
+        <p>
+          MindWave is a research-grade voice emotion recognition platform that uses state-of-the-art
+          self-supervised speech models to extract emotional features directly from raw audio waveforms.
+        </p>
+        <p>
+          Unlike keyword-based sentiment analysis, MindWave listens to <strong>how</strong> you speak —
+          your tone, cadence, and vocal energy — to detect emotional states that text alone cannot reveal.
+        </p>
+        <div class="hn-about-points">
+          <div class="hn-point">
+            <div class="hn-point-icon">🎤</div>
+            <div>
+              <strong>Voice-first Analysis</strong>
+              <p>Processes raw audio waveforms, not transcriptions</p>
+            </div>
+          </div>
+          <div class="hn-point">
+            <div class="hn-point-icon">🔒</div>
+            <div>
+              <strong>Privacy-first Design</strong>
+              <p>Audio processed locally, sessions stored on your device</p>
+            </div>
+          </div>
+          <div class="hn-point">
+            <div class="hn-point-icon">🧬</div>
+            <div>
+              <strong>Clinical-grade Model</strong>
+              <p>Fine-tuned wav2vec2 on diverse emotional speech datasets</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hn-about-visual">
+        <div class="hn-brain-card">
+          <div class="hn-emotion-ring">
+            <svg viewBox="0 0 200 200" width="200" height="200">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="#dcfce7" stroke-width="2"/>
+              <circle cx="100" cy="100" r="60" fill="none" stroke="#bbf7d0" stroke-width="1.5"/>
+              <!-- Emotion arcs -->
+              <path d="M 100 20 A 80 80 0 0 1 180 100" stroke="#16a34a" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.9"/>
+              <path d="M 180 100 A 80 80 0 0 1 140 168" stroke="#4ade80" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.8"/>
+              <path d="M 140 168 A 80 80 0 0 1 60 168" stroke="#86efac" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M 60 168 A 80 80 0 0 1 20 100" stroke="#fbbf24" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 20 100 A 80 80 0 0 1 60 32" stroke="#f87171" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 60 32 A 80 80 0 0 1 100 20" stroke="#c084fc" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <!-- Center -->
+              <circle cx="100" cy="100" r="38" fill="white" opacity="0.95"/>
+              <text x="100" y="95" text-anchor="middle" font-size="22" fill="#16a34a">😊</text>
+              <text x="100" y="116" text-anchor="middle" font-size="11" fill="#6b7280" font-family="system-ui">Happy</text>
+              <text x="100" y="128" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="600" font-family="system-ui">84%</text>
+            </svg>
+          </div>
+          <div class="hn-emotion-labels">
+            <span class="hn-elabel" style="--c:#16a34a">😊 Happy 84%</span>
+            <span class="hn-elabel" style="--c:#4ade80">😐 Neutral 8%</span>
+            <span class="hn-elabel" style="--c:#fbbf24">😢 Sad 4%</span>
+            <span class="hn-elabel" style="--c:#f87171">😡 Angry 2%</span>
+            <span class="hn-elabel" style="--c:#c084fc">😱 Fear 2%</span>
+          </div>
+          <div class="hn-card-footer">
+            <span class="hn-dot-live"></span> Live result preview
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ───────────────────────────────────────────────────────────── -->
+<section id="features" class="hn-section hn-features-section">
+  <div class="hn-container">
+    <div class="hn-section-header">
+      <span class="hn-tag">Features</span>
+      <h2>Everything You Need to Understand Your Voice</h2>
+      <p>Comprehensive mental wellness analytics, built on cutting-edge speech AI.</p>
+    </div>
+    <div class="hn-features-grid">
+      <div class="hn-feat-card hn-feat-large">
+        <div class="hn-feat-icon" style="background:#dcfce7;color:#16a34a">📊</div>
+        <h3>Real-Time Segment Dashboard</h3>
+        <p>Watch your emotional state evolve second-by-second. Interactive charts reveal emotion timelines, stress spikes, and audio energy patterns across your entire recording.</p>
+        <div class="hn-feat-preview">
+          <div class="hn-mini-chart">
+            <div class="hn-bar" style="height:30%"></div>
+            <div class="hn-bar" style="height:55%"></div>
+            <div class="hn-bar" style="height:80%"></div>
+            <div class="hn-bar" style="height:65%"></div>
+            <div class="hn-bar" style="height:90%"></div>
+            <div class="hn-bar" style="height:75%"></div>
+            <div class="hn-bar" style="height:60%"></div>
+            <div class="hn-bar" style="height:40%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hn-feat-card">
+        <div class="hn-feat-icon" style="background:#fef9c3;color:#ca8a04">😰</div>
+        <h3>Stress Score</h3>
+        <p>Aggregated from negative emotion probabilities across all audio segments — gives you a single actionable number.</p>
+      </div>
+
+      <div class="hn-feat-card">
+        <div class="hn-feat-icon" style="background:#ede9fe;color:#7c3aed">🔄</div>
+        <h3>Mood Instability Index</h3>
+        <p>Tracks how frequently your emotional state shifts throughout the recording, surfacing instability patterns.</p>
+      </div>
+
+      <div class="hn-feat-card">
+        <div class="hn-feat-icon" style="background:#fee2e2;color:#dc2626">🎵</div>
+        <h3>Audio Energy Analysis</h3>
+        <p>Measures vocal intensity and energy normalized across your recording — a proxy for emotional arousal.</p>
+      </div>
+
+      <div class="hn-feat-card">
+        <div class="hn-feat-icon" style="background:#dbeafe;color:#1d4ed8">💾</div>
+        <h3>Session History</h3>
+        <p>All your past analyses are saved locally for longitudinal tracking — revisit any session at any time.</p>
+      </div>
+
+      <div class="hn-feat-card hn-feat-wide">
+        <div class="hn-feat-icon" style="background:#dcfce7;color:#16a34a">🧠</div>
+        <h3>7-Class Emotion Detection</h3>
+        <p>Detects <strong>fear, anger, disgust, neutral, sadness, surprise</strong> and <strong>happiness</strong> with per-segment probability scores — not just a single label for the whole file.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DASHBOARD PREVIEW ──────────────────────────────────────────────────── -->
+<section id="dashboard-preview" class="hn-section hn-preview-section">
+  <div class="hn-container">
+    <div class="hn-section-header">
+      <span class="hn-tag">Live Demo</span>
+      <h2>Your Analytics Dashboard</h2>
+      <p>An interactive preview of what your analysis looks like — powered by real demo data.</p>
+    </div>
+
+    <!-- Mindo-style dashboard mock -->
+    <div class="hn-dashboard-mock">
+
+      <!-- Topbar -->
+      <div class="hn-mock-topbar">
+        <div class="hn-mock-logo">
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="url(#mg1)" stroke-width="2"/>
+            <path d="M6 14 Q10 6 14 14 Q18 22 22 14" stroke="url(#mg1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <defs><linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#16a34a"/><stop offset="100%" style="stop-color:#4ade80"/></linearGradient></defs>
+          </svg>
+          <span>MindWave</span>
+        </div>
+        <div class="hn-mock-nav">
+          <span class="active">Dashboard</span>
+          <span>Analyse</span>
+          <span>History</span>
+        </div>
+        <div class="hn-mock-user">
+          <div class="hn-mock-avatar">S</div>
+        </div>
+      </div>
+
+      <!-- Dashboard body -->
+      <div class="hn-mock-body">
+
+        <!-- Left column: greeting + metric cards -->
+        <div class="hn-mock-left">
+          <div class="hn-mock-greeting">
+            <p>Hello, <strong>Sara 👋</strong> How is your<br><strong>voice health today?</strong></p>
+          </div>
+
+          <div class="hn-mock-metrics">
+            <div class="hn-mock-metric">
+              <div class="hn-mm-label">Stress Score</div>
+              <div class="hn-mm-status">Status: <span style="color:#16a34a">Low</span></div>
+              <div class="hn-mm-val">18%</div>
+            </div>
+            <div class="hn-mock-metric">
+              <div class="hn-mm-label">Focus Power</div>
+              <div class="hn-mm-status">Status: <span style="color:#16a34a">Standard</span></div>
+              <div class="hn-mm-val">42 mins</div>
+            </div>
+            <div class="hn-mock-metric">
+              <div class="hn-mm-label">Mood Stability</div>
+              <div class="hn-mm-status">Status: <span style="color:#16a34a">Good</span></div>
+              <div class="hn-mm-val">0.22</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: emotion timeline chart -->
+        <div class="hn-mock-center">
+          <div class="hn-mock-chart-header">
+            <span class="hn-mock-chart-title">Emotion Over Time</span>
+            <span class="hn-mock-tag green">this week</span>
+          </div>
+          <div class="hn-mock-chart-wrap">
+            <canvas id="previewChart" height="100"></canvas>
+          </div>
+          <div class="hn-mock-chart-footer">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+        </div>
+
+        <!-- Right column: active path + session -->
+        <div class="hn-mock-right">
+          <div class="hn-mock-session">
+            <div class="hn-mock-session-label">Upcoming Session</div>
+            <div class="hn-mock-session-time"><span class="big">6</span> hr <span class="big">52</span> min</div>
+            <div class="hn-mock-session-doc">
+              <div class="hn-mock-doc-avatar">JA</div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:#111">Dr. Jams Alther</div>
+                <div style="font-size:10px;color:#6b7280">Emotion Specialist</div>
+              </div>
+            </div>
+          </div>
+          <div class="hn-mock-path">
+            <div class="hn-mock-path-header">
+              <span>Active Path This Week</span>
+              <span class="hn-mock-path-pct">76%</span>
+            </div>
+            <div class="hn-mock-path-item">
+              <span>Meditation</span>
+              <div class="hn-mock-bar-wrap">
+                <div class="hn-mock-bar-fill" style="width:50%"></div>
+              </div>
+              <span>50%</span>
+            </div>
+            <div class="hn-mock-path-item">
+              <span>Exercise</span>
+              <div class="hn-mock-bar-wrap">
+                <div class="hn-mock-bar-fill" style="width:85%"></div>
+              </div>
+              <span>85%</span>
+            </div>
+            <div class="hn-mock-path-item">
+              <span>Journaling</span>
+              <div class="hn-mock-bar-wrap">
+                <div class="hn-mock-bar-fill" style="width:60%"></div>
+              </div>
+              <span>60%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom row: reports + pie charts -->
+      <div class="hn-mock-bottom">
+        <div class="hn-mock-reports">
+          <div class="hn-mock-reports-header">
+            <span>Recent Sessions</span>
+            <span class="hn-mock-tag green">4 sessions</span>
+          </div>
+          <div class="hn-mock-report-item">
+            <div class="hn-mock-emo-dot" style="background:#dcfce7;color:#16a34a">😊</div>
+            <div class="hn-mock-ri-info">
+              <div class="hn-mock-ri-name">Morning Check-in</div>
+              <div class="hn-mock-ri-meta">Happy · 84% · 2 min 34s</div>
+            </div>
+            <div class="hn-mock-ri-score" style="color:#16a34a">Low stress</div>
+          </div>
+          <div class="hn-mock-report-item">
+            <div class="hn-mock-emo-dot" style="background:#fef9c3;color:#ca8a04">😐</div>
+            <div class="hn-mock-ri-info">
+              <div class="hn-mock-ri-name">Afternoon Voice Note</div>
+              <div class="hn-mock-ri-meta">Neutral · 62% · 1 min 12s</div>
+            </div>
+            <div class="hn-mock-ri-score" style="color:#ca8a04">Moderate</div>
+          </div>
+          <div class="hn-mock-report-item">
+            <div class="hn-mock-emo-dot" style="background:#dbeafe;color:#1d4ed8">😢</div>
+            <div class="hn-mock-ri-info">
+              <div class="hn-mock-ri-name">Evening Reflection</div>
+              <div class="hn-mock-ri-meta">Sad · 48% · 3 min 05s</div>
+            </div>
+            <div class="hn-mock-ri-score" style="color:#dc2626">High stress</div>
+          </div>
+        </div>
+
+        <div class="hn-mock-pie-card">
+          <div class="hn-mock-reports-header">
+            <span>Emotion Distribution</span>
+            <span class="hn-mock-tag purple">all time</span>
+          </div>
+          <div class="hn-mock-pie-layout">
+            <canvas id="previewPie" width="120" height="120"></canvas>
+            <div class="hn-mock-pie-legend">
+              <div class="hn-mock-legend-item"><span style="background:#16a34a"></span> Happy <strong>44%</strong></div>
+              <div class="hn-mock-legend-item"><span style="background:#86efac"></span> Neutral <strong>28%</strong></div>
+              <div class="hn-mock-legend-item"><span style="background:#fbbf24"></span> Sad <strong>12%</strong></div>
+              <div class="hn-mock-legend-item"><span style="background:#f87171"></span> Angry <strong>8%</strong></div>
+              <div class="hn-mock-legend-item"><span style="background:#c084fc"></span> Other <strong>8%</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hn-mock-energy-card">
+          <div class="hn-mock-reports-header">
+            <span>Audio Energy</span>
+            <span class="hn-mock-tag green">signal</span>
+          </div>
+          <div class="hn-mock-chart-wrap" style="height:110px">
+            <canvas id="previewEnergy" height="110"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hn-preview-cta">
+      <a href="/login" class="hn-btn-cta hn-btn-lg">Analyse Your Own Voice →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────────────────────── -->
+<section id="how" class="hn-section hn-how-section">
+  <div class="hn-container">
+    <div class="hn-section-header">
+      <span class="hn-tag">Process</span>
+      <h2>From Voice to Insights in Seconds</h2>
+    </div>
+    <div class="hn-steps">
+      <div class="hn-step">
+        <div class="hn-step-num">01</div>
+        <div class="hn-step-icon">🎙️</div>
+        <h3>Upload or Record</h3>
+        <p>Drop a WAV, MP3, OGG, or FLAC file — or record directly in the browser. Up to 50 MB.</p>
+      </div>
+      <div class="hn-step-arrow">→</div>
+      <div class="hn-step">
+        <div class="hn-step-num">02</div>
+        <div class="hn-step-icon">✂️</div>
+        <h3>Segment Processing</h3>
+        <p>Audio is sliced into configurable segments (0.5–2 sec) for time-resolved analysis.</p>
+      </div>
+      <div class="hn-step-arrow">→</div>
+      <div class="hn-step">
+        <div class="hn-step-num">03</div>
+        <div class="hn-step-icon">🤖</div>
+        <h3>AI Inference</h3>
+        <p>wav2vec2 generates a 7-class emotion probability vector for each audio segment.</p>
+      </div>
+      <div class="hn-step-arrow">→</div>
+      <div class="hn-step">
+        <div class="hn-step-num">04</div>
+        <div class="hn-step-icon">📐</div>
+        <h3>Metrics Computed</h3>
+        <p>Stress score, mood instability index, negative emotion ratio, and average energy are calculated.</p>
+      </div>
+      <div class="hn-step-arrow">→</div>
+      <div class="hn-step">
+        <div class="hn-step-num">05</div>
+        <div class="hn-step-icon">📊</div>
+        <h3>Interactive Dashboard</h3>
+        <p>Results visualised in real-time interactive charts. Session saved to your history automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────────── -->
+<section class="hn-cta-section">
+  <div class="hn-cta-glow"></div>
+  <div class="hn-cta-inner">
+    <h2>Start Understanding Your Emotions Today</h2>
+    <p>Free, private, and powered by state-of-the-art speech AI.</p>
+    <div class="hn-cta-btns">
+      <a href="/login" class="hn-btn-cta hn-btn-lg">Try MindWave Now</a>
+      <a href="/signup" class="hn-btn-outline-w hn-btn-lg">Create Free Account</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="hn-footer">
+  <div class="hn-container">
+    <div class="hn-footer-grid">
+      <div class="hn-footer-brand">
+        <div class="hn-logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="url(#fg1)" stroke-width="2"/>
+            <path d="M6 14 Q10 6 14 14 Q18 22 22 14" stroke="url(#fg1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <defs><linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#16a34a"/><stop offset="100%" style="stop-color:#4ade80"/></linearGradient></defs>
+          </svg>
+          <span>MindWave</span>
+        </div>
+        <p>AI-powered voice emotion analysis for mental wellness insights.</p>
+      </div>
+      <div class="hn-footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#dashboard-preview">Demo Dashboard</a>
+        <a href="/login">Analyse Voice</a>
+      </div>
+      <div class="hn-footer-col">
+        <h4>Technology</h4>
+        <a href="#how">How It Works</a>
+        <a href="#about">About the Model</a>
+        <a href="#">Documentation</a>
+      </div>
+      <div class="hn-footer-col">
+        <h4>Account</h4>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="hn-footer-bottom">
+      <p>© 2026 MindWave. Built with wav2vec2 &amp; ❤️ for mental health awareness.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/home.js"></script>
+</body>
+</html>
